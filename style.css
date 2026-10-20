@@ -605,3 +605,287 @@ html {
 .ai-output {
   line-height: 1.65;
 }
+/* Responsive layout fixes: keep these rules at the end so they override
+   earlier desktop styles on phones and small tablets. */
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.wrap {
+  width: min(1080px, calc(100% - 32px));
+  min-width: 0;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+}
+
+.layout,
+.hero-grid,
+.facts-grid,
+.steps,
+.cat-grid,
+.fields,
+.ai-row {
+  min-width: 0;
+}
+
+main,
+.sidebar,
+.hero-grid > *,
+.tool-head > *,
+.field,
+.cat,
+.steps li,
+.ai-box,
+.result {
+  min-width: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
+  font: inherit;
+}
+
+.field input,
+#calc-select,
+.ai-row select {
+  min-width: 0;
+  width: 100%;
+  font-size: 16px; /* avoids unwanted iOS zoom when focusing inputs */
+}
+
+.result {
+  overflow-wrap: anywhere;
+}
+
+.result table {
+  table-layout: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 800px) {
+  .wrap {
+    width: min(100% - 28px, 680px);
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .hero {
+    padding: 34px 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .hero-art {
+    width: min(100%, 300px);
+    justify-self: center;
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  #calc-list {
+    display: none;
+  }
+
+  .mobile-pick {
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  #calc-select {
+    display: block;
+  }
+
+  main {
+    padding: 20px 16px;
+  }
+
+  .section {
+    padding: 34px 0;
+  }
+
+  .tool-section {
+    padding-top: 12px;
+  }
+
+  .cat-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  }
+
+  .ai-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .wrap {
+    width: calc(100% - 24px);
+  }
+
+  .bar {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    padding: 10px 0;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .top-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    font-size: .9rem;
+  }
+
+  .top-nav a {
+    font-size: .9rem;
+  }
+
+  .top-nav a:last-child {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.65rem, 7vw, 2.1rem);
+    overflow-wrap: anywhere;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .hero .buttons,
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .buttons .btn,
+  .hero .buttons .btn {
+    flex: 1 1 130px;
+    text-align: center;
+    padding: 10px 12px;
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .facts strong {
+    font-size: 1.1rem;
+  }
+
+  .facts span {
+    display: block;
+    font-size: .82rem;
+  }
+
+  .cat-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .fields {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .tool-head {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .calc-icon {
+    width: 44px;
+    height: 44px;
+    padding: 7px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    overflow-wrap: anywhere;
+  }
+
+  .formula {
+    padding: 10px;
+    font-size: .88rem;
+  }
+
+  .result table {
+    width: 100%;
+    font-size: .9rem;
+  }
+
+  .result td {
+    padding: 8px 5px;
+    overflow-wrap: anywhere;
+  }
+
+  .result td:nth-child(2),
+  .result td:nth-child(3) {
+    white-space: normal;
+  }
+
+  .ai-box {
+    padding: 14px;
+  }
+
+  .ai-box #explain {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .wrap {
+    width: calc(100% - 20px);
+  }
+
+  main {
+    padding: 16px 12px;
+  }
+
+  .facts-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .buttons .btn,
+  .hero .buttons .btn {
+    flex-basis: 100%;
+  }
+}
