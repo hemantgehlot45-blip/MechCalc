@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MechCalc – Mechanical Engineering Calculators</title>
+  <meta name="description"
+    content="Free mechanical engineering calculators: torque, power, belt drives, gears, stress, beams, springs, machining and more.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="logo" href="#top">MechCalc</a>
+      <nav class="top-nav" aria-label="Main">
+        <a href="#categories">Categories</a>
+        <a href="#tool">Calculators</a>
+        <a href="#how">How it works</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Calculators for everyday mechanical engineering</h1>
+        <p class="lead">Torque, gears, stress, springs, machining and more. Enter your values and get the answer with
+          units, along with the working.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#tool">Open calculators</a>
+          <a class="btn" href="#categories">Browse categories</a>
+        </div>
+      </div>
+      <svg class="hero-art" viewBox="0 0 320 220" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+        <circle cx="110" cy="110" r="62" stroke-width="14" stroke-dasharray="9.7 9.7" />
+        <circle cx="110" cy="110" r="48" />
+        <circle cx="110" cy="110" r="12" />
+        <path d="M110 62v96M62 110h96" stroke-width="2" />
+        <circle cx="232" cy="82" r="38" stroke-width="12" stroke-dasharray="7.5 7.5" />
+        <circle cx="232" cy="82" r="28" />
+        <circle cx="232" cy="82" r="8" />
+        <path d="M30 196h260M60 196v-10M260 196v-10" stroke-width="2" />
+      </svg>
+    </div>
+  </section>
+
+  <section class="facts">
+    <div class="wrap facts-grid">
+      <div><strong id="count"></strong><span>calculators</span></div>
+      <div><strong>Formula</strong><span>shown with every result</span></div>
+      <div><strong>Units</strong><span>listed for every input</span></div>
+      <div><strong>Free</strong><span>no sign-up needed</span></div>
+    </div>
+  </section>
+  <section class="section" id="how">
+    <div class="wrap">
+      <h2 class="title">How it works</h2>
+      <ol class="steps">
+        <li>
+          <h3>1. Choose a calculator</h3>
+          <p>Pick a category card or use the list next to the calculator.</p>
+        </li>
+        <li>
+          <h3>2. Enter your values</h3>
+          <p>Each box shows the unit it expects, so there is no guessing.</p>
+        </li>
+        <li>
+          <h3>3. Read the result</h3>
+          <p>You get the answer, its unit and the values you entered.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="section" id="categories">
+    <div class="wrap">
+      <h2 class="title">Browse by category</h2>
+      <div class="cat-grid" id="cat-grid"></div>
+    </div>
+  </section>
+
+  <section class="section tool-section" id="tool">
+    <div class="wrap layout">
+      <aside class="sidebar">
+        <label class="mobile-pick" for="calc-select">Choose a calculator</label>
+        <select id="calc-select"></select>
+        <nav id="calc-list" aria-label="Calculators"></nav>
+      </aside>
+
+      <main>
+        <div class="tool-head">
+          <div class="calc-icon" id="calc-icon"></div>
+          <div>
+            <div class="crumb" id="calc-crumb"></div>
+            <h2 id="calc-title"></h2>
+          </div>
+        </div>
+        <p id="calc-desc" class="desc"></p>
+        <p class="formula"><strong>Formula:</strong> <span id="calc-formula"></span></p>
+
+        <form id="calc-form" novalidate>
+          <div id="fields" class="fields"></div>
+          <div class="buttons">
+            <button type="submit" class="btn primary">Calculate</button>
+            <button type="button" class="btn" id="reset">Reset</button>
+          </div>
+        </form>
+
+        <p id="error" class="error" role="alert" hidden></p>
+
+        <section id="result" class="result" aria-live="polite" hidden>
+          <h3>Result</h3>
+          <table id="result-table"></table>
+          <p class="working"><strong>Working:</strong> <span id="working"></span></p>
+          <div class="ai-box">
+            <h3>Explanation</h3>
+            <p class="ai-note">Calculate first, then click the button to get a simple explanation from the connected
+              Google Gemma model.</p>
+            <button type="button" class="btn primary" id="explain">Explain this result</button>
+            <p id="ai-status" class="ai-status" aria-live="polite"></p>
+            <div id="ai-output" class="ai-output" hidden></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </section>
+
+
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>MechCalc</strong> – calculators for students, workshop staff and engineers.</p>
+      <p>These calculators are for learning and quick estimates. Check important results by hand or with a standard
+        handbook before using them in a real design.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
